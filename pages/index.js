@@ -1,3 +1,9 @@
+import FoodList from "../components/Food/FoodList";
+
 export default function Home() {
-  return <h1>Hello Beavers 🦫</h1>;
+  return (
+    <>
+      <FoodList />
+    </>
+  );
 }
