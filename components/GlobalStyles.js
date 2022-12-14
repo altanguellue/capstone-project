@@ -5,6 +5,7 @@ const GlobalStyles = createGlobalStyle`
     body {
         padding: 0;
         margin: 0;
+        background-color: #FAE1DD;
         font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
     }
 
