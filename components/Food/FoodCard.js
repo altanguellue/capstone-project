@@ -41,7 +41,6 @@ const StyledItem = styled.li`
   transition: transform 0.3s ease;
   cursor: pointer;
   &:hover {
-    background: #ffccc3;
     transition: 0.4s;
   }
   background: #e8a598;
@@ -58,6 +57,7 @@ const StyledName = styled.h3`
 
 const StyledMeta = styled.div`
   margin: 10px;
+  display: flex;
 `;
 
 const StyledFoodImage = styled(Image)`
