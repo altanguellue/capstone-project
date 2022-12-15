@@ -32,6 +32,8 @@ const StyledListHeader = styled.h2`
   line-height: 22px;
 `;
 const StyledList = styled.ul`
-  list-style: none;
-  padding: 0;
+  display: flex;
+  flex-direction: column;
+  /* align-items: center;
+  list-style: none; */
 `;

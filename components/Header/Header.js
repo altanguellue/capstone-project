@@ -5,7 +5,13 @@ import LogoImg from "../../assets/images/logo.svg";
 export default function Header() {
   return (
     <StyledLogoWrapper>
-      <Image src={LogoImg} alt="App Logo" width={98} height={62} priority />
+      <StyledImage
+        src={LogoImg}
+        alt="App Logo"
+        width={98}
+        height={62}
+        priority
+      />
     </StyledLogoWrapper>
   );
 }

@@ -1,4 +1,6 @@
 import styled from "styled-components";
+import Image from "next/image";
+import FoodImage from "../../assets/images/artichoke.jpg";
 
 export default function FoodCard({ name, img }) {
   return (
@@ -18,26 +20,29 @@ export default function FoodCard({ name, img }) {
       </StyledSvg>
       <StyledName>{name}</StyledName>
       <StyledMeta>
-        <StyledImg src={img} />
+        <StyledFoodImage
+          src={FoodImage}
+          alt="Food Image"
+          width={60}
+          height={60}
+          priority
+        />
       </StyledMeta>
     </StyledItem>
   );
 }
 
 const StyledItem = styled.li`
-  margin: auto;
-  margin-bottom: 1rem;
-  width: 377px;
-  height: 80px;
+  margin: 0.5rem;
   display: flex;
   flex-direction: row-reverse;
   justify-content: space-between;
-
   box-shadow: 0 0 28px 4px rgba(0, 0, 0, 0.1);
   transition: transform 0.3s ease;
   cursor: pointer;
   &:hover {
-    transform: scale(1.1);
+    background: #ffccc3;
+    transition: 0.4s;
   }
   background: #e8a598;
   border-radius: 6px;
@@ -45,24 +50,21 @@ const StyledItem = styled.li`
 const StyledName = styled.h3`
   align-self: center;
   color: #71554f;
-  padding: 25px;
+  margin-right: 60px;
   font-weight: 500;
   font-size: 17px;
   line-height: 20px;
 `;
 
 const StyledMeta = styled.div`
-  margin: 2%;
+  margin: 10px;
 `;
 
-const StyledImg = styled.img`
+const StyledFoodImage = styled(Image)`
   border-radius: 6px;
-  width: 65px;
-  height: 65px;
-  align-self: start;
 `;
 
 const StyledSvg = styled.svg`
   align-self: center;
-  margin-right: 5rem;
+  margin-right: 40px;
 `;
