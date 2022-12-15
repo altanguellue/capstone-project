@@ -2,7 +2,7 @@ import styled from "styled-components";
 import Image from "next/image";
 import FoodImage from "../../assets/images/artichoke.jpg";
 
-export default function FoodCard({ name, img }) {
+export default function FoodCard({ name }) {
   return (
     <StyledItem>
       <StyledSvg

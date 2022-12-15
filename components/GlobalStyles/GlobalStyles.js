@@ -5,7 +5,7 @@ const GlobalStyles = createGlobalStyle`
     body {
         
         background-color: #FAE1DD;
-        font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji";
+        font-family: Montserrat_Regular;
     }
 
     * {
@@ -16,6 +16,10 @@ const GlobalStyles = createGlobalStyle`
 
     @media (max-width: 600px) {}  
     
+    @font-face {
+        font-family: Montserrat_Regular ;
+        src: url("/fonts/Montserrat/static/Montserrat-Regular.ttf") format("truetype");
+    }
 `;
 
 export default GlobalStyles;
