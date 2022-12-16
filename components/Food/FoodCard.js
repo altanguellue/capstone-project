@@ -37,16 +37,13 @@ const StyledItem = styled.li`
   display: flex;
   flex-direction: row-reverse;
   justify-content: space-between;
+  background: #e8a598;
+  border-radius: 6px;
   box-shadow: 0 0 28px 4px rgba(0, 0, 0, 0.1);
   transition: transform 0.3s ease;
   cursor: pointer;
-  &:hover {
-    transition: 0.4s;
-  }
-  background: #e8a598;
-  border-radius: 6px;
 `;
-const StyledName = styled.h3`
+const StyledName = styled.p`
   align-self: center;
   color: #71554f;
   margin-right: 60px;
