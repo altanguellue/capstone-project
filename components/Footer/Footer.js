@@ -47,11 +47,35 @@ export default function Footer() {
             priority
           />
         </Link>
-
         <Link href="/favorite">
           <StyledFavIconFilled
             src={FavIconFilled}
             alt="Favorite Icon Filled"
+            width={51}
+            height={51}
+            priority
+          />
+        </Link>
+      </StyledHomeWrapper>
+    );
+  }
+  if (pathname === "/food") {
+    return (
+      <StyledHomeWrapper>
+        <Link href="/">
+          <StyledHomeIcon
+            src={HomeImg}
+            alt="Home Icon"
+            width={42}
+            height={42}
+            priority
+          />
+        </Link>
+
+        <Link href="/favorite">
+          <StyledFavIcon
+            src={FavImg}
+            alt="Favorite Icon"
             width={51}
             height={51}
             priority
