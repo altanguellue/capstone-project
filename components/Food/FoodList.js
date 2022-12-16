@@ -25,11 +25,12 @@ export default function FoodList() {
 }
 
 const StyledListHeader = styled.h2`
-  text-align: center;
+  text-align: left;
   color: #71554f;
   font-weight: 300;
   font-size: 18px;
   line-height: 22px;
+  padding-left: 12px;
 `;
 const StyledList = styled.ul`
   display: flex;
