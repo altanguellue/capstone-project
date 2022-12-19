@@ -2,10 +2,10 @@ import styled from "styled-components";
 import Image from "next/image";
 import Link from "next/link";
 import { useRouter } from "next/router";
-import HomeIconFilled from "../../assets/images/home.svg";
+import HomeIconFilled from "../../assets/images/home-filled.svg";
 import HomeIconUnfilled from "../../assets/images/home-unfilled.svg";
 import FavoriteIconFilled from "../../assets/images/favorite-filled.svg";
-import FavoriteIconUnfilled from "../../assets/images/favorite.svg";
+import FavoriteIconUnfilled from "../../assets/images/favorite-unfilled.svg";
 
 export default function Footer() {
   const { pathname } = useRouter();

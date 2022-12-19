@@ -2,7 +2,7 @@ import styled from "styled-components";
 import Image from "next/image";
 import Link from "next/link";
 import FoodCardImage from "../../assets/images/artichoke.jpg";
-import ArrowIconForward from "../../assets/images/arrow_button.svg";
+import ArrowIconForward from "../../assets/images/arrow-button-forward.svg";
 
 export default function FoodCard({ name }) {
   return (

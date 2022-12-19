@@ -1,7 +1,7 @@
 import styled from "styled-components";
 import Image from "next/image";
 import Link from "next/link";
-import AppLogo from "../../assets/images/logo.svg";
+import AppLogo from "../../assets/images/app-logo.svg";
 
 export default function Header() {
   return (
