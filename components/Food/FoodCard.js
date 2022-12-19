@@ -7,7 +7,7 @@ import Link from "next/link";
 export default function FoodCard({ name }) {
   return (
     <StyledItem>
-      <Link href="/food">
+      <Link href={`/${name}`}>
         <StyledArrowIcon
           src={ArrowIcon}
           alt="Arrow Icon"
@@ -40,7 +40,7 @@ const StyledItem = styled.li`
   border-radius: 6px;
   box-shadow: 0 0 28px 4px rgba(0, 0, 0, 0.1);
   transition: transform 0.3s ease;
-  cursor: pointer;
+
   align-items: center;
 `;
 const StyledName = styled.p`
@@ -63,4 +63,5 @@ const StyledFoodImage = styled(Image)`
 
 const StyledArrowIcon = styled(Image)`
   margin-right: 40px;
+  cursor: pointer;
 `;

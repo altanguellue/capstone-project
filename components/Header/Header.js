@@ -1,17 +1,20 @@
 import styled from "styled-components";
 import Image from "next/image";
 import LogoImg from "../../assets/images/logo.svg";
+import Link from "next/link";
 
 export default function Header() {
   return (
     <StyledLogoWrapper>
-      <StyledImage
-        src={LogoImg}
-        alt="App Logo"
-        width={98}
-        height={62}
-        priority
-      />
+      <Link href="/">
+        <StyledImage
+          src={LogoImg}
+          alt="App Logo"
+          width={98}
+          height={62}
+          priority
+        />
+      </Link>
     </StyledLogoWrapper>
   );
 }
