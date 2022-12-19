@@ -1,21 +1,21 @@
 import styled from "styled-components";
 import Image from "next/image";
-import HomeImg from "../../assets/images/home.svg";
-import FavImg from "../../assets/images/favorite.svg";
 import Link from "next/link";
 import { useRouter } from "next/router";
-import FavIconFilled from "../../assets/images/favorite-filled.svg";
+import HomeIconFilled from "../../assets/images/home.svg";
 import HomeIconUnfilled from "../../assets/images/home-unfilled.svg";
+import FavoriteIconFilled from "../../assets/images/favorite-filled.svg";
+import FavoriteIconUnfilled from "../../assets/images/favorite.svg";
 
 export default function Footer() {
   const { pathname } = useRouter();
   if (pathname === "/") {
     return (
-      <StyledHomeWrapper>
+      <StyledFooterWrapper>
         <Link href="/">
-          <StyledHomeIcon
-            src={HomeImg}
-            alt="Home Icon"
+          <StyledHomeIconFilled
+            src={HomeIconFilled}
+            alt="Home Icon Filled"
             width={42}
             height={42}
             priority
@@ -23,49 +23,49 @@ export default function Footer() {
         </Link>
 
         <Link href="/favorite">
-          <StyledFavIcon
-            src={FavImg}
-            alt="Favorite Icon"
+          <StyledFavoriteIconUnfilled
+            src={FavoriteIconUnfilled}
+            alt="Favorite Icon Unfilled"
             width={51}
             height={51}
             priority
           />
         </Link>
-      </StyledHomeWrapper>
+      </StyledFooterWrapper>
     );
   }
 
   if (pathname === "/favorite") {
     return (
-      <StyledHomeWrapper>
+      <StyledFooterWrapper>
         <Link href="/">
           <StyledHomeIconUnfilled
             src={HomeIconUnfilled}
-            alt="Home Icon"
+            alt="Home Icon Unfilled"
             width={42}
             height={42}
             priority
           />
         </Link>
         <Link href="/favorite">
-          <StyledFavIconFilled
-            src={FavIconFilled}
+          <StyledFavoriteIconFilled
+            src={FavoriteIconFilled}
             alt="Favorite Icon Filled"
             width={51}
             height={51}
             priority
           />
         </Link>
-      </StyledHomeWrapper>
+      </StyledFooterWrapper>
     );
   }
 
   return (
-    <StyledHomeWrapper>
+    <StyledFooterWrapper>
       <Link href="/">
-        <StyledHomeIcon
-          src={HomeImg}
-          alt="Home Icon"
+        <StyledHomeIconUnfilled
+          src={HomeIconUnfilled}
+          alt="Home Icon Unfilled"
           width={42}
           height={42}
           priority
@@ -73,19 +73,19 @@ export default function Footer() {
       </Link>
 
       <Link href="/favorite">
-        <StyledFavIcon
-          src={FavImg}
-          alt="Favorite Icon"
+        <StyledFavoriteIconUnfilled
+          src={FavoriteIconUnfilled}
+          alt="Favorite Icon Unfilled"
           width={51}
           height={51}
           priority
         />
       </Link>
-    </StyledHomeWrapper>
+    </StyledFooterWrapper>
   );
 }
 
-const StyledHomeWrapper = styled.div`
+const StyledFooterWrapper = styled.div`
   position: fixed;
   display: flex;
   bottom: 0;
@@ -96,7 +96,7 @@ const StyledHomeWrapper = styled.div`
   background-color: #fae1dd;
 `;
 
-const StyledHomeIcon = styled(Image)``;
-const StyledFavIcon = styled(Image)``;
-const StyledFavIconFilled = styled(Image)``;
+const StyledHomeIconFilled = styled(Image)``;
+const StyledFavoriteIconUnfilled = styled(Image)``;
+const StyledFavoriteIconFilled = styled(Image)``;
 const StyledHomeIconUnfilled = styled(Image)``;

@@ -1,37 +1,38 @@
 import styled from "styled-components";
 import Image from "next/image";
-import FoodImage from "../../assets/images/artichoke.jpg";
-import ArrowIcon from "../../assets/images/arrow_button.svg";
 import Link from "next/link";
+import FoodCardImage from "../../assets/images/artichoke.jpg";
+import ArrowIconForward from "../../assets/images/arrow_button.svg";
 
 export default function FoodCard({ name }) {
   return (
-    <StyledItem>
-      <Link href={`/${name}`}>
-        <StyledArrowIcon
-          src={ArrowIcon}
-          alt="Arrow Icon"
+    <StyledLink href={`/${name}`}>
+      <StyledFoodCardItem>
+        <StyledArrowIconForward
+          src={ArrowIconForward}
+          alt="Arrow Icon Forward"
           width={11}
           height={19}
           priority
         />
-      </Link>
 
-      <StyledName>{name}</StyledName>
-      <StyledMeta>
-        <StyledFoodImage
-          src={FoodImage}
-          alt="Food Image"
-          width={60}
-          height={60}
-          priority
-        />
-      </StyledMeta>
-    </StyledItem>
+        <StyledFoodCardName>{name}</StyledFoodCardName>
+
+        <StyledFoodCardImageWrapper>
+          <StyledFoodCardImage
+            src={FoodCardImage}
+            alt="Food Card Image"
+            width={60}
+            height={60}
+            priority
+          />
+        </StyledFoodCardImageWrapper>
+      </StyledFoodCardItem>
+    </StyledLink>
   );
 }
 
-const StyledItem = styled.li`
+const StyledFoodCardItem = styled.li`
   margin: 0.5rem;
   display: flex;
   flex-direction: row-reverse;
@@ -40,10 +41,10 @@ const StyledItem = styled.li`
   border-radius: 6px;
   box-shadow: 0 0 28px 4px rgba(0, 0, 0, 0.1);
   transition: transform 0.3s ease;
-
+  cursor: pointer;
   align-items: center;
 `;
-const StyledName = styled.p`
+const StyledFoodCardName = styled.p`
   align-self: center;
   color: #71554f;
   margin-right: 60px;
@@ -52,16 +53,20 @@ const StyledName = styled.p`
   line-height: 20px;
 `;
 
-const StyledMeta = styled.div`
+const StyledFoodCardImageWrapper = styled.div`
   margin: 10px;
   display: flex;
 `;
 
-const StyledFoodImage = styled(Image)`
+const StyledFoodCardImage = styled(Image)`
   border-radius: 6px;
 `;
 
-const StyledArrowIcon = styled(Image)`
+const StyledArrowIconForward = styled(Image)`
   margin-right: 40px;
   cursor: pointer;
+`;
+
+const StyledLink = styled(Link)`
+  text-decoration: none;
 `;
