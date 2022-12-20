@@ -1,13 +1,13 @@
-import { dataFoods } from "../../lib/data";
 import styled from "styled-components";
 import { Fragment } from "react";
+import { dataFoods } from "../../lib/data";
 import FoodCard from "./FoodCard";
 
 export default function FoodList() {
   return (
     <>
-      <StyledListHeader>Obst & Gemüse</StyledListHeader>
-      <StyledList>
+      <StyledFoodListHeader>Obst & Gemüse</StyledFoodListHeader>
+      <StyledFoodList>
         {dataFoods.map((dataFood) => {
           return (
             <Fragment key={dataFood.id}>
@@ -19,19 +19,20 @@ export default function FoodList() {
             </Fragment>
           );
         })}
-      </StyledList>
+      </StyledFoodList>
     </>
   );
 }
 
-const StyledListHeader = styled.h2`
-  text-align: center;
+const StyledFoodListHeader = styled.h2`
+  text-align: left;
   color: #71554f;
   font-weight: 300;
   font-size: 18px;
   line-height: 22px;
+  padding-left: 12px;
 `;
-const StyledList = styled.ul`
-  list-style: none;
-  padding: 0;
+const StyledFoodList = styled.ul`
+  display: flex;
+  flex-direction: column;
 `;
