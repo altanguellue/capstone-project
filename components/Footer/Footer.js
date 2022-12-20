@@ -18,7 +18,6 @@ export default function Footer() {
             alt="Home Icon Filled"
             width={42}
             height={42}
-            priority
           />
         </Link>
 
@@ -28,7 +27,6 @@ export default function Footer() {
             alt="Favorite Icon Unfilled"
             width={51}
             height={51}
-            priority
           />
         </Link>
       </StyledFooterWrapper>
@@ -44,7 +42,6 @@ export default function Footer() {
             alt="Home Icon Unfilled"
             width={42}
             height={42}
-            priority
           />
         </Link>
         <Link href="/favorite">
@@ -53,7 +50,6 @@ export default function Footer() {
             alt="Favorite Icon Filled"
             width={51}
             height={51}
-            priority
           />
         </Link>
       </StyledFooterWrapper>
@@ -68,7 +64,6 @@ export default function Footer() {
           alt="Home Icon Unfilled"
           width={42}
           height={42}
-          priority
         />
       </Link>
 
@@ -78,7 +73,6 @@ export default function Footer() {
           alt="Favorite Icon Unfilled"
           width={51}
           height={51}
-          priority
         />
       </Link>
     </StyledFooterWrapper>

@@ -13,7 +13,6 @@ export default function FoodCard({ name }) {
           alt="Arrow Icon Forward"
           width={11}
           height={19}
-          priority
         />
 
         <StyledFoodCardName>{name}</StyledFoodCardName>
@@ -24,7 +23,6 @@ export default function FoodCard({ name }) {
             alt="Food Card Image"
             width={60}
             height={60}
-            priority
           />
         </StyledFoodCardImageWrapper>
       </StyledFoodCardItem>
