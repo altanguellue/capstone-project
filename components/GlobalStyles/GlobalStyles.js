@@ -13,9 +13,7 @@ const GlobalStyles = createGlobalStyle`
         padding: 0;
         margin: 0;
     }
-
-    @media (max-width: 600px) {}  
-    
+        
     @font-face {
         font-family: Montserrat_Regular ;
         src: url("/fonts/Montserrat/static/Montserrat-Regular.ttf") format("truetype");
