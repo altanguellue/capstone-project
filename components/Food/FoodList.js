@@ -19,7 +19,7 @@ export default function FoodList() {
           height={20}
         />
         <input
-          type="search"
+          type="text"
           placeholder="Suchen"
           onChange={(e) => setSearch(e.target.value.toLowerCase())}
         />
