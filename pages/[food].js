@@ -7,13 +7,10 @@ import FoodCardDetail from "../components/Food/FoodCardDetail";
 export default function Food() {
   const router = useRouter();
   const { food } = router.query;
-  console.log(dataFoods);
   const currentFood = dataFoods.find((dataFood) => dataFood.name === food);
   if (!currentFood) {
     return null;
   }
-
-  console.log(currentFood);
   const { name } = currentFood;
   return (
     <>

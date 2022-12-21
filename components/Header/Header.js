@@ -7,13 +7,7 @@ export default function Header() {
   return (
     <StyledAppLogoWrapper>
       <Link href="/">
-        <StyledAppLogo
-          src={AppLogo}
-          alt="App Logo"
-          width={98}
-          height={62}
-          priority
-        />
+        <StyledAppLogo src={AppLogo} alt="App Logo" width={98} height={62} />
       </Link>
     </StyledAppLogoWrapper>
   );
@@ -30,5 +24,4 @@ const StyledAppLogo = styled(Image)`
   display: flex;
   align-items: center;
   justify-content: center;
-  height: 100px;
 `;
