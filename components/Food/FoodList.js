@@ -6,7 +6,7 @@ import FoodCard from "./FoodCard";
 import Image from "next/image";
 import SearchIcon from "../../assets/images/search-icon.svg";
 
-export default function FoodList() {
+export default function FoodList({ onToggleFavorite, favorites }) {
   const [search, setSearch] = useState("");
   return (
     <>
@@ -41,6 +41,8 @@ export default function FoodList() {
                   id={dataFood.id}
                   name={dataFood.name}
                   img={dataFood.img}
+                  onToggleFavorite={onToggleFavorite}
+                  favorites={favorites}
                 />
               </Fragment>
             );

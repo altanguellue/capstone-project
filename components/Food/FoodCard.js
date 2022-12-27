@@ -3,8 +3,7 @@ import Image from "next/image";
 import Link from "next/link";
 import FoodCardImage from "../../assets/images/artichoke.jpg";
 import ArrowIconForward from "../../assets/images/arrow-button-forward.svg";
-import AddToFavoritesIcon from "../../assets/images/to-favorites-unfilled.svg";
-import RemoveFromFavoritesIcon from "../../assets/images/to-favorites-filled.svg";
+import FavoriteButton from "../Favorite/FavoriteButton";
 
 export default function FoodCard({ name }) {
   return (
@@ -27,13 +26,7 @@ export default function FoodCard({ name }) {
           width={11}
           height={19}
         />
-
-        <StyledAddToFavoritesIcon
-          src={AddToFavoritesIcon}
-          alt="Add To Favorites Icon"
-          width={26}
-          height={26}
-        />
+        <FavoriteButton />
       </StyledFoodCardItem>
     </StyledLink>
   );
@@ -70,12 +63,6 @@ const StyledFoodCardImage = styled(Image)`
 
 const StyledArrowIconForward = styled(Image)`
   align-self: center;
-`;
-
-const StyledAddToFavoritesIcon = styled(Image)`
-  position: absolute;
-  align-self: start;
-  justify-self: end;
 `;
 
 const StyledLink = styled(Link)`
