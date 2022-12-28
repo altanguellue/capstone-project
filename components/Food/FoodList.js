@@ -54,7 +54,6 @@ export default function FoodList({ onToggleFavorite, favorites }) {
 
 const StyledHomeHeader = styled.h1`
   margin-left: 0.5rem;
-
   color: #71554f;
   font-weight: 100;
   font-size: 26px;
