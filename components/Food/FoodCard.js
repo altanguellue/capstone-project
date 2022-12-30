@@ -5,7 +5,7 @@ import FoodCardImage from "../../assets/images/artichoke.jpg";
 import ArrowIconForward from "../../assets/images/arrow-button-forward.svg";
 import FavoriteButton from "../Favorite/FavoriteButton";
 
-export default function FoodCard({ name }) {
+export default function FoodCard({ name, onToggleFavorite, foods }) {
   return (
     <StyledLink href={`/${name}`}>
       <StyledFoodCardItem>
@@ -26,7 +26,13 @@ export default function FoodCard({ name }) {
           width={11}
           height={19}
         />
-        <FavoriteButton />
+
+        <StyledButton
+          title="Test Button"
+          onClick={(event) => onToggleFavorite(event, foods.id)}
+        >
+          <FavoriteButton isFavorite={foods.isFavorite} />
+        </StyledButton>
       </StyledFoodCardItem>
     </StyledLink>
   );
@@ -67,4 +73,11 @@ const StyledArrowIconForward = styled(Image)`
 
 const StyledLink = styled(Link)`
   text-decoration: none;
+`;
+
+const StyledButton = styled.button`
+  background: none;
+  position: absolute;
+  border: none;
+  justify-self: end;
 `;
