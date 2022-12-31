@@ -20,7 +20,6 @@ export default function Favorite({ foods, onToggleFavorite }) {
     <>
       <Header />
       <StyledFavoriteHeader>Favoriten</StyledFavoriteHeader>
-
       {favoriteFoodsList}
       <Footer />
     </>

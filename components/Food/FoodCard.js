@@ -9,26 +9,21 @@ export default function FoodCard({ name, onToggleFavorite, foods }) {
   return (
     <StyledLink href={`/${name}`}>
       <StyledFoodCardItem>
-        <StyledFoodCardImageWrapper>
-          <StyledFoodCardImage
-            src={FoodCardImage}
-            alt="Food Card Image"
-            width={60}
-            height={60}
-          />
-        </StyledFoodCardImageWrapper>
-
+        <StyledFoodCardImage
+          src={FoodCardImage}
+          alt="Food Card Image"
+          width={60}
+          height={60}
+        />
         <StyledFoodCardName>{name}</StyledFoodCardName>
-
         <StyledArrowIconForward
           src={ArrowIconForward}
           alt="Arrow Icon Forward"
           width={11}
           height={19}
         />
-
         <StyledButton
-          title="Test Button"
+          title="Favorite Button"
           onClick={(event) => onToggleFavorite(event, foods.id)}
         >
           <FavoriteButton isFavorite={foods.isFavorite} />
@@ -50,21 +45,16 @@ const StyledFoodCardItem = styled.li`
 `;
 const StyledFoodCardName = styled.p`
   align-self: center;
-
   color: #71554f;
-  /* margin-right: 60px; */
   font-weight: 500;
   font-size: 17px;
   line-height: 20px;
 `;
 
-const StyledFoodCardImageWrapper = styled.div`
-  margin: 10px;
-  display: flex;
-`;
-
 const StyledFoodCardImage = styled(Image)`
   border-radius: 6px;
+  margin: 10px;
+  display: flex;
 `;
 
 const StyledArrowIconForward = styled(Image)`
