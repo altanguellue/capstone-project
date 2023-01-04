@@ -6,7 +6,7 @@ import FoodCard from "./FoodCard";
 import Image from "next/image";
 import SearchIcon from "../../assets/images/search-icon.svg";
 
-export default function FoodList() {
+export default function FoodList({ onToggleFavorite, foods }) {
   const [search, setSearch] = useState("");
   return (
     <>
@@ -28,19 +28,21 @@ export default function FoodList() {
       <StyledFoodListHeader>Obst & Gemüse</StyledFoodListHeader>
 
       <StyledFoodList>
-        {dataFoods
-          .filter((dataFood) => {
+        {foods
+          .filter((food) => {
             return search.toLowerCase() === ""
-              ? dataFood
-              : dataFood.name.toLowerCase().includes(search);
+              ? food
+              : food.name.toLowerCase().includes(search);
           })
-          .map((dataFood) => {
+          .map((foods) => {
             return (
-              <Fragment key={dataFood.id}>
+              <Fragment key={foods.id}>
                 <FoodCard
-                  id={dataFood.id}
-                  name={dataFood.name}
-                  img={dataFood.img}
+                  id={foods.id}
+                  name={foods.name}
+                  img={foods.img}
+                  onToggleFavorite={onToggleFavorite}
+                  foods={foods}
                 />
               </Fragment>
             );
@@ -52,7 +54,6 @@ export default function FoodList() {
 
 const StyledHomeHeader = styled.h1`
   margin-left: 0.5rem;
-
   color: #71554f;
   font-weight: 100;
   font-size: 26px;
