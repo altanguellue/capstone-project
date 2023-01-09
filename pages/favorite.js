@@ -11,6 +11,7 @@ export default function Favorite({ foods, onToggleFavorite }) {
       <FoodCard
         id={favoriteFood.id}
         name={favoriteFood.name}
+        img={favoriteFood.img}
         onToggleFavorite={onToggleFavorite}
         foods={favoriteFood}
       />
