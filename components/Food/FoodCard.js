@@ -3,14 +3,18 @@ import Image from "next/image";
 import Link from "next/link";
 import ArrowIconForward from "../../assets/images/arrow-button-forward.svg";
 import FavoriteButton from "../Favorite/FavoriteButton";
-// import TestFoodImage from "../../assets/food-images/artichoke.svg";
 
-export default function FoodCard({ name, onToggleFavorite, foods, img }) {
+export default function FoodCard({
+  name,
+  onToggleFavorite,
+  foods,
+  imgOverview,
+}) {
   return (
     <StyledLink href={`/${name}`}>
       <StyledFoodCardItem>
         <StyledFoodCardImage
-          src={img}
+          src={imgOverview}
           alt="Food Card Image"
           width={60}
           height={60}

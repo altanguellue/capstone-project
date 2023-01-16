@@ -39,7 +39,7 @@ export default function FoodList({ onToggleFavorite, foods }) {
                 <FoodCard
                   id={foods.id}
                   name={foods.name}
-                  img={foods.img}
+                  imgOverview={foods.imgOverview}
                   onToggleFavorite={onToggleFavorite}
                   foods={foods}
                 />
