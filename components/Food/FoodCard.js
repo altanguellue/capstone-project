@@ -1,16 +1,20 @@
 import styled from "styled-components";
 import Image from "next/image";
 import Link from "next/link";
-import FoodCardImage from "../../assets/images/artichoke.jpg";
 import ArrowIconForward from "../../assets/images/arrow-button-forward.svg";
 import FavoriteButton from "../Favorite/FavoriteButton";
 
-export default function FoodCard({ name, onToggleFavorite, foods }) {
+export default function FoodCard({
+  name,
+  onToggleFavorite,
+  foods,
+  imgOverview,
+}) {
   return (
     <StyledLink href={`/${name}`}>
       <StyledFoodCardItem>
         <StyledFoodCardImage
-          src={FoodCardImage}
+          src={imgOverview}
           alt="Food Card Image"
           width={60}
           height={60}
@@ -55,6 +59,7 @@ const StyledFoodCardImage = styled(Image)`
   border-radius: 6px;
   margin: 10px;
   display: flex;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 `;
 
 const StyledArrowIconForward = styled(Image)`

@@ -11,11 +11,11 @@ export default function Food() {
   if (!currentFood) {
     return null;
   }
-  const { name } = currentFood;
+  const { name, imgDetail, info } = currentFood;
   return (
     <>
       <Header />
-      <FoodCardDetail name={name} />
+      <FoodCardDetail name={name} imgDetail={imgDetail} info={info} />
       <Footer />
     </>
   );

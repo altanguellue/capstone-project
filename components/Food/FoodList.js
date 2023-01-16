@@ -1,7 +1,6 @@
 import styled from "styled-components";
 import { useState } from "react";
 import { Fragment } from "react";
-import { dataFoods } from "../../lib/data";
 import FoodCard from "./FoodCard";
 import Image from "next/image";
 import SearchIcon from "../../assets/images/search-icon.svg";
@@ -32,7 +31,7 @@ export default function FoodList({ onToggleFavorite, foods }) {
           .filter((food) => {
             return search.toLowerCase() === ""
               ? food
-              : food.name.toLowerCase().includes(search);
+              : food.name.toLowerCase().startsWith(search);
           })
           .map((foods) => {
             return (
@@ -40,7 +39,7 @@ export default function FoodList({ onToggleFavorite, foods }) {
                 <FoodCard
                   id={foods.id}
                   name={foods.name}
-                  img={foods.img}
+                  imgOverview={foods.imgOverview}
                   onToggleFavorite={onToggleFavorite}
                   foods={foods}
                 />
