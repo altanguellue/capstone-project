@@ -19,7 +19,7 @@ export default function FoodCardDetail({ name, imgDetail, info }) {
 
       <StyledFoodDetailImage
         src={imgDetail}
-        alt="Imaget"
+        alt="Image Detail"
         width={360}
         height={163}
       />
