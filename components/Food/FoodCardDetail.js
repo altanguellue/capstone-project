@@ -26,7 +26,6 @@ export default function FoodCardDetail({ name, imgDetail, info }) {
       <StyledFoodCardDetailHeader>Tipps & Hinweise</StyledFoodCardDetailHeader>
       <StyledFoodCardDetailItem>
         <StyledFoodCardDetailText>{info}</StyledFoodCardDetailText>
-        <StyledInfoIcon src={InfoIcon} alt="Info Icon" width={50} height={50} />
       </StyledFoodCardDetailItem>
     </StyledContainer>
   );
@@ -55,9 +54,6 @@ const StyledArrowIconBackward = styled(Image)`
   left: 15px;
 `;
 
-const StyledInfoIcon = styled(Image)`
-  align-self: center;
-`;
 const StyledFoodCardDetailItem = styled.article`
   margin: 0.5rem;
   display: flex;
@@ -70,9 +66,10 @@ const StyledFoodCardDetailItem = styled.article`
 `;
 
 const StyledFoodCardDetailText = styled.p`
-  line-height: 1.1rem;
+  text-align: left;
+  line-height: 1.2rem;
   font-size: 12px;
-  padding: 10px;
+  padding: 12px;
 `;
 
 const StyledFoodCardDetailHeader = styled.h2`
