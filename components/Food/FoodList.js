@@ -203,7 +203,6 @@ const StyledSearchInput = styled.div`
   input::placeholder {
     color: #ffe6e1;
   }
-
   input {
     margin: 0.5rem;
     padding: 5px;
