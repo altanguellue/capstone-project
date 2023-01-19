@@ -16,7 +16,6 @@ export default function FoodCardDetail({ name, imgDetail, info }) {
         onClick={() => router.back()}
       />
       <StyledFoodCardDetailItemHeader>{name}</StyledFoodCardDetailItemHeader>
-
       <StyledFoodDetailImage
         src={imgDetail}
         alt="Image Detail"
