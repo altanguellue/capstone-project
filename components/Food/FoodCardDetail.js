@@ -1,7 +1,6 @@
 import styled from "styled-components";
 import { useRouter } from "next/router";
 import ArrowIconBackward from "../../assets/images/previous-page-arrow-button.svg";
-import InfoIcon from "../../assets/images/info-icon.svg";
 import Image from "next/image";
 
 export default function FoodCardDetail({ name, imgDetail, info }) {
