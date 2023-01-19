@@ -7,9 +7,37 @@ import SearchIcon from "../../assets/images/search-icon.svg";
 
 export default function FoodList({ onToggleFavorite, foods }) {
   const [search, setSearch] = useState("");
+
+  const [selectedCategory, setSelectedCategory] = useState("All");
+  const [selectedMonth, setSelectedMonth] = useState(null);
+
+  console.log(selectedMonth);
+
+  let filteredItems = [...foods];
+  let monthText = "Alle";
+  let foodText = "Obst & Gemüse";
+
+  filteredItems.sort((foodA, foodB) => {
+    if (foodA.name > foodB.name) return 1;
+    if (foodA.name < foodB.name) return -1;
+    return 0;
+  });
+
+  if (selectedCategory !== "All") {
+    filteredItems = foods.filter((food) => food.category === selectedCategory);
+    foodText = `${selectedCategory}`;
+  }
+
+  if (selectedMonth) {
+    filteredItems = filteredItems.filter((food) =>
+      food.availability.includes(selectedMonth)
+    );
+    monthText = `${selectedMonth}`;
+  }
+
   return (
     <>
-      <StyledHomeHeader>Dezember</StyledHomeHeader>
+      <StyledHomeHeader>{monthText}</StyledHomeHeader>
       <StyledSearchInput>
         <StyledSearchIcon
           src={SearchIcon}
@@ -24,10 +52,31 @@ export default function FoodList({ onToggleFavorite, foods }) {
         />
       </StyledSearchInput>
 
-      <StyledFoodListHeader>Obst & Gemüse</StyledFoodListHeader>
+      <div>
+        <button onClick={() => setSelectedCategory("All")}>Alle</button>
+        <button onClick={() => setSelectedCategory("Gemüse")}>Gemüse</button>
+        <button onClick={() => setSelectedCategory("Obst")}>Obst</button>
+      </div>
+
+      <div>
+        <button onClick={() => setSelectedMonth("Januar")}>Januar</button>
+        <button onClick={() => setSelectedMonth("Februar")}>Februar</button>
+        <button onClick={() => setSelectedMonth("März")}>März</button>
+        <button onClick={() => setSelectedMonth("April")}>April</button>
+        <button onClick={() => setSelectedMonth("Mai")}>Mai</button>
+        <button onClick={() => setSelectedMonth("Juni")}>Juni</button>
+        <button onClick={() => setSelectedMonth("Juli")}>Juli</button>
+        <button onClick={() => setSelectedMonth("August")}>August</button>
+        <button onClick={() => setSelectedMonth("September")}>September</button>
+        <button onClick={() => setSelectedMonth("Oktober")}>Oktober</button>
+        <button onClick={() => setSelectedMonth("November")}>November</button>
+        <button onClick={() => setSelectedMonth("Dezember")}>Dezember</button>
+      </div>
+
+      <StyledFoodListHeader>{foodText}</StyledFoodListHeader>
 
       <StyledFoodList>
-        {foods
+        {filteredItems
           .filter((food) => {
             return search.toLowerCase() === ""
               ? food
@@ -46,6 +95,34 @@ export default function FoodList({ onToggleFavorite, foods }) {
               </Fragment>
             );
           })}
+
+        {/* <label>Filter Lebensmittel:</label>
+        <div>
+          <button
+            className={selectedCategory=== null ? "active" : ""}
+            onClick={() => setSelectedCategory(null)}
+          >
+            All
+          </button>
+          {availabilities.map((availability) => (
+            <button
+              key={availability}
+              className={selectedType === availability ? "active" : ""}
+              onClick={() => setSelectedType(availability)}
+            >
+              {availability}
+            </button>
+          ))}
+        </div>
+        <div>
+          {filteredItems.map((food) => (
+            <div key={food.id}>
+              <p>{food.name}</p>
+              <p>{food.month}</p>
+              <p>{food.type}</p>
+            </div>
+          ))}
+        </div> */}
       </StyledFoodList>
     </>
   );
