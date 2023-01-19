@@ -7,14 +7,11 @@ import SearchIcon from "../../assets/images/search-icon.svg";
 
 export default function FoodList({ onToggleFavorite, foods }) {
   const [search, setSearch] = useState("");
-
   const [selectedCategory, setSelectedCategory] = useState("All");
   const [selectedMonth, setSelectedMonth] = useState(null);
 
-  console.log(selectedMonth);
-
   let filteredItems = [...foods];
-  let monthText = "Alle";
+  let monthText = "Gesamtes Jahr";
   let foodText = "Obst & Gemüse";
 
   filteredItems.sort((foodA, foodB) => {
@@ -51,28 +48,103 @@ export default function FoodList({ onToggleFavorite, foods }) {
           onChange={(e) => setSearch(e.target.value.toLowerCase())}
         />
       </StyledSearchInput>
+      <StyledButtonContainer>
+        <StyledCategoryButtonContainer>
+          <StyledCategoryButton
+            className={selectedCategory === "All" ? "active" : ""}
+            onClick={() => setSelectedCategory("All")}
+          >
+            Alle
+          </StyledCategoryButton>
+          <StyledCategoryButton
+            className={selectedCategory === "Gemüse" ? "active" : ""}
+            onClick={() => setSelectedCategory("Gemüse")}
+          >
+            Gemüse
+          </StyledCategoryButton>
+          <StyledCategoryButton
+            className={selectedCategory === "Obst" ? "active" : ""}
+            onClick={() => setSelectedCategory("Obst")}
+          >
+            Obst
+          </StyledCategoryButton>
+        </StyledCategoryButtonContainer>
 
-      <div>
-        <button onClick={() => setSelectedCategory("All")}>Alle</button>
-        <button onClick={() => setSelectedCategory("Gemüse")}>Gemüse</button>
-        <button onClick={() => setSelectedCategory("Obst")}>Obst</button>
-      </div>
-
-      <div>
-        <button onClick={() => setSelectedMonth("Januar")}>Januar</button>
-        <button onClick={() => setSelectedMonth("Februar")}>Februar</button>
-        <button onClick={() => setSelectedMonth("März")}>März</button>
-        <button onClick={() => setSelectedMonth("April")}>April</button>
-        <button onClick={() => setSelectedMonth("Mai")}>Mai</button>
-        <button onClick={() => setSelectedMonth("Juni")}>Juni</button>
-        <button onClick={() => setSelectedMonth("Juli")}>Juli</button>
-        <button onClick={() => setSelectedMonth("August")}>August</button>
-        <button onClick={() => setSelectedMonth("September")}>September</button>
-        <button onClick={() => setSelectedMonth("Oktober")}>Oktober</button>
-        <button onClick={() => setSelectedMonth("November")}>November</button>
-        <button onClick={() => setSelectedMonth("Dezember")}>Dezember</button>
-      </div>
-
+        <StyledMonthButtonContainer>
+          <StyledMonthButton
+            className={selectedMonth === "Januar" ? "active" : ""}
+            onClick={() => setSelectedMonth("Januar")}
+          >
+            Jan
+          </StyledMonthButton>
+          <StyledMonthButton
+            className={selectedMonth === "Februar" ? "active" : ""}
+            onClick={() => setSelectedMonth("Februar")}
+          >
+            Feb
+          </StyledMonthButton>
+          <StyledMonthButton
+            className={selectedMonth === "März" ? "active" : ""}
+            onClick={() => setSelectedMonth("März")}
+          >
+            Mär
+          </StyledMonthButton>
+          <StyledMonthButton
+            className={selectedMonth === "April" ? "active" : ""}
+            onClick={() => setSelectedMonth("April")}
+          >
+            Apr
+          </StyledMonthButton>
+          <StyledMonthButton
+            className={selectedMonth === "Mai" ? "active" : ""}
+            onClick={() => setSelectedMonth("Mai")}
+          >
+            Mai
+          </StyledMonthButton>
+          <StyledMonthButton
+            className={selectedMonth === "Juni" ? "active" : ""}
+            onClick={() => setSelectedMonth("Juni")}
+          >
+            Jun
+          </StyledMonthButton>
+          <StyledMonthButton
+            className={selectedMonth === "Juli" ? "active" : ""}
+            onClick={() => setSelectedMonth("Juli")}
+          >
+            Jul
+          </StyledMonthButton>
+          <StyledMonthButton
+            className={selectedMonth === "August" ? "active" : ""}
+            onClick={() => setSelectedMonth("August")}
+          >
+            Aug
+          </StyledMonthButton>
+          <StyledMonthButton
+            className={selectedMonth === "September" ? "active" : ""}
+            onClick={() => setSelectedMonth("September")}
+          >
+            Sep
+          </StyledMonthButton>
+          <StyledMonthButton
+            className={selectedMonth === "Oktober" ? "active" : ""}
+            onClick={() => setSelectedMonth("Oktober")}
+          >
+            Okt
+          </StyledMonthButton>
+          <StyledMonthButton
+            className={selectedMonth === "November" ? "active" : ""}
+            onClick={() => setSelectedMonth("November")}
+          >
+            Nov
+          </StyledMonthButton>
+          <StyledMonthButton
+            className={selectedMonth === "Dezember" ? "active" : ""}
+            onClick={() => setSelectedMonth("Dezember")}
+          >
+            Dez
+          </StyledMonthButton>
+        </StyledMonthButtonContainer>
+      </StyledButtonContainer>
       <StyledFoodListHeader>{foodText}</StyledFoodListHeader>
 
       <StyledFoodList>
@@ -95,34 +167,6 @@ export default function FoodList({ onToggleFavorite, foods }) {
               </Fragment>
             );
           })}
-
-        {/* <label>Filter Lebensmittel:</label>
-        <div>
-          <button
-            className={selectedCategory=== null ? "active" : ""}
-            onClick={() => setSelectedCategory(null)}
-          >
-            All
-          </button>
-          {availabilities.map((availability) => (
-            <button
-              key={availability}
-              className={selectedType === availability ? "active" : ""}
-              onClick={() => setSelectedType(availability)}
-            >
-              {availability}
-            </button>
-          ))}
-        </div>
-        <div>
-          {filteredItems.map((food) => (
-            <div key={food.id}>
-              <p>{food.name}</p>
-              <p>{food.month}</p>
-              <p>{food.type}</p>
-            </div>
-          ))}
-        </div> */}
       </StyledFoodList>
     </>
   );
@@ -139,8 +183,9 @@ const StyledFoodListHeader = styled.h2`
   margin-left: 0.5rem;
   color: #71554f;
   font-weight: 300;
-  font-size: 18px;
+  font-size: 20px;
   line-height: 22px;
+  padding-top: 15px;
 `;
 const StyledFoodList = styled.ul`
   display: flex;
@@ -181,4 +226,53 @@ const StyledSearchIcon = styled(Image)`
   left: 10px;
   align-self: center;
   justify-self: self-start;
+`;
+
+const StyledButtonContainer = styled.div`
+  margin: 0.5rem;
+  background-color: #e8a598;
+  border-radius: 6px;
+`;
+
+const StyledCategoryButtonContainer = styled.div`
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  border-radius: 6px;
+`;
+
+const StyledMonthButtonContainer = styled.div`
+  display: grid;
+  grid-template-columns: repeat(6, 1fr);
+  grid-template-rows: repeat(2, 1fr);
+`;
+
+const StyledCategoryButton = styled.button`
+  background-color: transparent;
+  border: none;
+  color: #71554f;
+  padding: 0.4rem;
+  font-weight: 400;
+  font-size: 15px;
+  line-height: 18px;
+  margin: 0.2rem;
+  background-color: #fec5bb;
+  border-radius: 6px;
+  &.active {
+    background-color: #f9dcd7;
+  }
+`;
+
+const StyledMonthButton = styled.button`
+  background-color: transparent;
+  border: none;
+  color: #71554f;
+  padding: 0.4rem;
+  font-weight: 400;
+  font-size: 15px;
+  line-height: 18px;
+  margin: 0.2rem;
+  &.active {
+    background-color: #f9dcd7;
+    border-radius: 6px;
+  }
 `;
