@@ -1,34 +1,47 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# Saisono
 
-## Getting Started
+## Warum Saisono?
 
-First, run the development server:
+In Deutschland wächst viel frisches Obst und Gemüse. Da jedoch aus der ganzen Welt importiert wird, lässt sich trotz bestimmter Erntesaison fast jede Sorte an Lebensmittel in den Regalen finden. Das führt dazu, dass wir alle nicht mehr genau wissen, welches Lebensmittel zu einer bestimmten Jahreszeit wächst. Saisono hilft dir wieder herauszufinden, zu welcher Jahreszeit, welches Obst bzw. Gemüse geernet wird. So lässt sich ein nachhaltiges Leben erreichen und mal im Ernst - Erdbeeren schmecken doch nur im Sommer lecker, oder?
 
-```bash
-npm run dev
-# or
-yarn dev
-```
+<br>
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## Wie funktioniert Saisono?
 
-You can start editing the page by modifying `pages/index.js`. The page auto-updates as you edit the file.
+Die Kernfunktion ist natürlich der Filterkalender. Hier kann der Nutzer nach dem jeweiligen Monat filtern und sich zusätzlich Obst & Gemüse oder jeweils beide Lebensmittelarten einzeln anzeigen lassen. Je nach ausgewähltem Filter werden die Lebensmittel dargestellt. Diese können favorisiert werden und springen auf eine Favoritenseite. Jedes Lebensmittel hat auch eine Detailseite, welches zusätzliche Informationen, wie bspw. die Lagerung beinhaltet.
 
-[API routes](https://nextjs.org/docs/api-routes/introduction) can be accessed on [http://localhost:3000/api/hello](http://localhost:3000/api/hello). This endpoint can be edited in `pages/api/hello.js`.
+<br>
 
-The `pages/api` directory is mapped to `/api/*`. Files in this directory are treated as [API routes](https://nextjs.org/docs/api-routes/introduction) instead of React pages.
+## Wie sieht die Zukunft aus?
 
-## Learn More
+Als weitere Funktionen sollen Nüsse und Salate bzw. Kräuter in Saisono integriert werden. Zusätzlich ist in Planung, eine Abindung von regionalen Händlern mittels einer API zu implementieren. Des Weiteren soll es möglich sein, die Lebensmittel in eine Einkaufliste zu speichern. Gepaart würde dies dem Nutzer nicht nur die Erkenntnis weitergeben, zu welcher Zeit er welches Gemüse & Obst bekommt, sondern auch direkt bei welchem Händler er es einkaufen kann. Mittels der Einkaufliste würde man somit auch nicht mehr planlos vor dem Regal im Markt stehen.
 
-To learn more about Next.js, take a look at the following resources:
+<br>
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+## Tech Stack
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
+- Figma
+- react
+- next.js
+- styled components
 
-## Deploy on Vercel
+<br>
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+## Bilderreihe zu Saisono
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+<br>
+
+[Oder direkt zur App](https://saisono.vercel.app/)
+
+<br>
+
+![Saisono](/public/Saisono.png)
+
+---
+
+## Projekt aufsetzen
+
+1. Repository klonen.
+2. Mittels `.env.example` die eigene `.env.local` im Root Verzeichnis aufsetzen.
+3. Innerhalb dieses Root Verzeichnisses alle dependencies mittels `npm install` installieren.
+4. Die App mit dem Befehl `npm run dev` starten.
